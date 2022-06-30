@@ -11,7 +11,7 @@ extern crate r_i18n;
 use french_numbers::*; use get_shell::{get_shell,Shell::*};
 
     /// These constants are to avoid magic strings/values.
-    const LANGUAGE_LOCALES: &[&str] = &["en", "es", "bg", "bn", "de", "eo", "fr", "gr", "hi", "id", "ie", "jp", "kr", "la", "lt", "nl", "no", "pl", "pt", "ro", "ru", "sk", "tr", "zh", "cs", "it"];
+    const LANGUAGE_LOCALES: &[&str] = &["en", "es", "bg", "bn", "de", "eo", "fr", "gr", "hi", "hr", "id", "ie", "jp", "kr", "la", "lt", "nl", "no", "pl", "pt", "ro", "ru", "sk", "tr", "zh", "cs", "it", "uk"];
     const LANGUAGES_DIRECTORY: &str = "translations";
     const MSG: &str = "msg";
 
@@ -260,8 +260,7 @@ MakeMsgWriterForMsgWriterCallerAndErrorHandler<
                                             Zsh=>{
 msg = msg;
                                 } _ => {
-                     msg_string.push_str( "\n");
-                    msg = &msg_string;
+                                            panic!("Oh dear, your shell is UNSAFE!\n But don't worry, Rust is so safe, it'll quit immediately!");
                             }
                                     }
                                 let msg = String::from(msg);
