@@ -260,8 +260,7 @@ MakeMsgWriterForMsgWriterCallerAndErrorHandler<
                                             Zsh=>{
 msg = msg;
                                 } _ => {
-                     msg_string.push_str( "\n");
-                    msg = &msg_string;
+                                            panic!("Oh dear, your shell is UNSAFE!\n But don't worry, Rust is so safe, it'll quit immediately!");
                             }
                                     }
                                 let msg = String::from(msg);
